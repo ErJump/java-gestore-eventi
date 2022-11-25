@@ -37,7 +37,7 @@ public class Main {
 				try {
 					ev1.prenota();
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.err.println(e.getMessage());
 				}
 			}
 			
@@ -45,6 +45,24 @@ public class Main {
 								+ "\nPosti disponibili: " + (ev1.getPostiTotale() - ev1.getPostiPrenotati()));
 		}
 		
+		System.out.println("-------------------\nVuoi disdire prenotazioni? ");
+		boolean checkD = sc.nextBoolean();
+		if(checkD) {
+			System.out.println("Quante disdette vuoi effettuare? ");
+			int numeroDisdette = sc.nextInt();
+			
+			for (int i = 0; i < numeroDisdette; i++) {
+				try {
+					ev1.disdici();
+				} catch (Exception e) {
+					System.err.println(e.getMessage());
+				}
+			}
+			
+			System.out.println("Posti prenotati: " + ev1.getPostiPrenotati() 
+								+ "\nPosti disponibili: " + (ev1.getPostiTotale() - ev1.getPostiPrenotati()));
+		}
 		
+		sc.close();
 	}
 }
