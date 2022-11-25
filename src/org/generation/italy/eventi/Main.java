@@ -24,8 +24,27 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			System.out.println(ev1);			
+			System.out.println(ev1 == null ? "Non è stato possibile creare l'evento" : ev1);			
 		}
+		
+		System.out.println("-------------------\nVuoi effettuare prenotazioni? ");
+		boolean check = sc.nextBoolean();
+		if(check) {
+			System.out.println("Quante prenotazioni vuoi effettuare? ");
+			int numeroPrenotazioni = sc.nextInt();
+			
+			for (int i = 0; i < numeroPrenotazioni; i++) {
+				try {
+					ev1.prenota();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+			System.out.println("Posti prenotati: " + ev1.getPostiPrenotati() 
+								+ "\nPosti disponibili: " + (ev1.getPostiTotale() - ev1.getPostiPrenotati()));
+		}
+		
 		
 	}
 }
