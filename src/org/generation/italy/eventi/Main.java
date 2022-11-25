@@ -1,6 +1,7 @@
 package org.generation.italy.eventi;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -64,12 +65,21 @@ public class Main {
 //		}
 //		
 //		sc.close();
+		
+		//Milestone 3
+		
 		Evento e1 = null;
 		Evento e2 = null;
+		Evento e3 = null;
+		Evento e4 = null;
+		Evento e5 = null;
 		
 		try {
-			e1 = new Evento("Wooo", LocalDate.parse("2023-08-05"), 30 );
+			e1 = new Evento("Woo", LocalDate.parse("2023-08-05"), 30 );
 			e2 = new Evento("Wii", LocalDate.parse("2023-08-05"), 20 );
+			e3 = new Evento("Wee", LocalDate.parse("2023-07-05"), 50 );
+			e4 = new Evento("Waa", LocalDate.parse("2023-06-20"), 20 );
+			e5 = new Evento("Wuu", LocalDate.parse("2023-06-20"), 50 );
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -77,6 +87,15 @@ public class Main {
 		ProgrammEventi pe = new ProgrammEventi("Summer");
 		pe.addEvento(e1);
 		pe.addEvento(e2);
+		pe.addEvento(e3);
+		pe.addEvento(e4);
+		pe.addEvento(e5);
 		System.out.println(pe);
+		
+		List<Evento> eventi5Agosto = pe.getEventiByData(LocalDate.parse("2023-08-05"));
+		
+		System.out.println("Eventi presenti il 5 agosto: " + eventi5Agosto);
+		System.out.println("------------------");
+		System.out.println("Numero eventi presenti nel programma: " + pe.getNumeroEventi());
 	}
 }
