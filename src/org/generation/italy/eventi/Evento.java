@@ -54,7 +54,7 @@ public class Evento {
 		postiPrenotati--;
 	}
 	
-	private String getDataFormattata() {
+	protected String getDataFormattata() {
 		return data.getDayOfMonth() + "/" + data.getMonthValue() + "/" + data.getYear();
 	}
 	
