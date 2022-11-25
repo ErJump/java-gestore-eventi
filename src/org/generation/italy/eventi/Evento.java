@@ -40,6 +40,10 @@ public class Evento {
 		return postiPrenotati;
 	}
 	
+	public int getPostiDisponibili() {
+		return getPostiTotale() - getPostiPrenotati();
+	}
+	
 	public void prenota() throws Exception {
 		if (postiPrenotati == postiTotale || data.isBefore(LocalDate.now())) {
 			throw new Exception("Non è più possibile partecipare all'evento");

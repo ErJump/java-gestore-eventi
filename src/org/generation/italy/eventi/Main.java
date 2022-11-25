@@ -1,8 +1,10 @@
 package org.generation.italy.eventi;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Scanner;
+//import java.util.List;
+//import java.util.Scanner;
+import java.time.LocalTime;
 
 public class Main {
 	public static void main(String[] args) {
@@ -68,37 +70,63 @@ public class Main {
 		
 		//Milestone 3
 		
-		Evento e1 = null;
-		Evento e2 = null;
-		Evento e3 = null;
-		Evento e4 = null;
-		Evento e5 = null;
+//		Evento e1 = null;
+//		Evento e2 = null;
+//		Evento e3 = null;
+//		Evento e4 = null;
+//		Evento e5 = null;
+//		
+//		try {
+//			e1 = new Evento("Woo", LocalDate.parse("2023-08-05"), 30 );
+//			e2 = new Evento("Wii", LocalDate.parse("2023-08-05"), 20 );
+//			e3 = new Evento("Wee", LocalDate.parse("2023-07-05"), 50 );
+//			e4 = new Evento("Waa", LocalDate.parse("2023-06-20"), 20 );
+//			e5 = new Evento("Wuu", LocalDate.parse("2023-06-20"), 50 );
+//		} catch (Exception e) {
+//			System.err.println(e.getMessage());
+//		}
+//		
+//		ProgrammEventi pe = new ProgrammEventi("Estate");
+//		pe.addEvento(e1);
+//		pe.addEvento(e2);
+//		pe.addEvento(e3);
+//		pe.addEvento(e4);
+//		pe.addEvento(e5);
+//		System.out.println(pe);
+//		
+//		List<Evento> eventi5Agosto = pe.getEventiByData(LocalDate.parse("2023-08-05"));
+//		
+//		System.out.println("Eventi presenti il 5 agosto: " + eventi5Agosto);
+//		System.out.println("------------------");
+//		System.out.println("Numero eventi presenti nel programma: " + pe.getNumeroEventi());
+//		pe.clearEventi();
+//		System.out.println("Numero eventi presenti nel programma dopo clear: " + pe.getNumeroEventi());
 		
+		//Milestone 4
+		
+		Concerto c = null;
 		try {
-			e1 = new Evento("Woo", LocalDate.parse("2023-08-05"), 30 );
-			e2 = new Evento("Wii", LocalDate.parse("2023-08-05"), 20 );
-			e3 = new Evento("Wee", LocalDate.parse("2023-07-05"), 50 );
-			e4 = new Evento("Waa", LocalDate.parse("2023-06-20"), 20 );
-			e5 = new Evento("Wuu", LocalDate.parse("2023-06-20"), 50 );
+			c = new Concerto("Noisia", LocalDate.parse("2023-08-05"), 500, LocalTime.parse("22:00"), BigDecimal.valueOf(20.55));
+			for(int i = 0; i < 300; i++ ) {
+				c.prenota();				
+			}
+			
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
 		
-		ProgrammEventi pe = new ProgrammEventi("Estate");
-		pe.addEvento(e1);
-		pe.addEvento(e2);
-		pe.addEvento(e3);
-		pe.addEvento(e4);
-		pe.addEvento(e5);
-		System.out.println(pe);
+		System.out.println(c);
+		System.out.println("Posti disponibili: " + c.getPostiDisponibili());
 		
-		List<Evento> eventi5Agosto = pe.getEventiByData(LocalDate.parse("2023-08-05"));
+		try {
+			for(int i = 0; i < 20; i++ ) {
+				c.disdici();				
+			}
+			
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
 		
-		System.out.println("Eventi presenti il 5 agosto: " + eventi5Agosto);
-		System.out.println("------------------");
-		System.out.println("Numero eventi presenti nel programma: " + pe.getNumeroEventi());
-		pe.clearEventi();
-		System.out.println("Numero eventi presenti nel programma dopo clear: " + pe.getNumeroEventi());
-
+		System.out.println("Posti disponibili: " + c.getPostiDisponibili());
 	}
 }
