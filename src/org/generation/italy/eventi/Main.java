@@ -81,10 +81,10 @@ public class Main {
 			e4 = new Evento("Waa", LocalDate.parse("2023-06-20"), 20 );
 			e5 = new Evento("Wuu", LocalDate.parse("2023-06-20"), 50 );
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 		}
 		
-		ProgrammEventi pe = new ProgrammEventi("Summer");
+		ProgrammEventi pe = new ProgrammEventi("Estate");
 		pe.addEvento(e1);
 		pe.addEvento(e2);
 		pe.addEvento(e3);
@@ -97,5 +97,8 @@ public class Main {
 		System.out.println("Eventi presenti il 5 agosto: " + eventi5Agosto);
 		System.out.println("------------------");
 		System.out.println("Numero eventi presenti nel programma: " + pe.getNumeroEventi());
+		pe.clearEventi();
+		System.out.println("Numero eventi presenti nel programma dopo clear: " + pe.getNumeroEventi());
+
 	}
 }
