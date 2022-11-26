@@ -137,10 +137,10 @@ public class Main {
 		Evento e4 = null;
 		
 		try {
-			e1 = new Evento("Woo", LocalDate.parse("2023-08-05"), 30 );
-			e2 = new Evento("Woo", LocalDate.parse("2023-08-05"), 30 );
-			e3 = new Evento("Woo", LocalDate.parse("2023-08-06"), 30 );
-			e4 = new Evento("Wii", LocalDate.parse("2023-08-05"), 30 );
+			e1 = new Evento("Woo", LocalDate.parse("2023-08-05"), 3000 );
+			e2 = new Evento("Woo", LocalDate.parse("2023-08-05"), 5000 );
+			e3 = new Evento("Woo", LocalDate.parse("2023-08-06"), 4000 );
+			e4 = new Evento("Wii", LocalDate.parse("2023-08-05"), 600 );
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
@@ -157,6 +157,9 @@ public class Main {
 		peu.addEvento(e4);
 		System.out.println(peu);
 		System.out.println("Numero eventi: " + peu.getNumeroEventi());
+		System.out.println("Evento con maggior numero di posti: " + peu.getMaxPostiTotaliEvento() 
+							+ " - " 
+							+ peu.getMaxPostiTotaliEvento().getPostiTotale() + " posti");
 		peu.clearEventi();
 		System.out.println("Numero eventi dopo clear: " + peu.getNumeroEventi());
 

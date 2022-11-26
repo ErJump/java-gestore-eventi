@@ -34,6 +34,7 @@ public class ProgrammaEventiUnici {
 	
 	public Set<Evento> getEventiByData(LocalDate data) {
 		Set<Evento> eventiByData = new HashSet<>();
+		
 		for (Evento e : eventi) {
 			if (e.getData().equals(data)) {
 				eventiByData.add(e);
@@ -62,6 +63,19 @@ public class ProgrammaEventiUnici {
 		}
 		
 		return listaFormattata;
+	}
+	
+	public Evento getMaxPostiTotaliEvento() {
+		Evento maxPostiTotaliEvento = null;
+		int maxPostiTotali = Integer.MIN_VALUE;
+		
+		for (Evento e : eventi) {
+			if (e.getPostiTotale() > maxPostiTotali) {
+				maxPostiTotali = e.getPostiTotale();
+				maxPostiTotaliEvento = e;
+			}
+		}
+		return maxPostiTotaliEvento;
 	}
 	
 	@Override
