@@ -104,29 +104,51 @@ public class Main {
 		
 		//Milestone 4
 		
-		Concerto c = null;
+//		Concerto c = null;
+//		try {
+//			c = new Concerto("Noisia", LocalDate.parse("2023-08-05"), 500, LocalTime.parse("22:00"), BigDecimal.valueOf(19.99));
+//			for(int i = 0; i < 300; i++ ) {
+//				c.prenota();				
+//			}
+//			
+//		} catch (Exception e) {
+//			System.err.println(e.getMessage());
+//		}
+//		
+//		System.out.println(c);
+//		System.out.println("Posti disponibili: " + c.getPostiDisponibili());
+//		
+//		try {
+//			for(int i = 0; i < 20; i++ ) {
+//				c.disdici();				
+//			}
+//			
+//		} catch (Exception e) {
+//			System.err.println(e.getMessage());
+//		}
+//		
+//		System.out.println("Posti disponibili: " + c.getPostiDisponibili());
+		
+		//Milestone 5
+		
+		Evento e1 = null;
+		Evento e2 = null;
+		Evento e3 = null;
+		Evento e4 = null;
+		
 		try {
-			c = new Concerto("Noisia", LocalDate.parse("2023-08-05"), 500, LocalTime.parse("22:00"), BigDecimal.valueOf(20.55));
-			for(int i = 0; i < 300; i++ ) {
-				c.prenota();				
-			}
-			
+			e1 = new Evento("Woo", LocalDate.parse("2023-08-05"), 30 );
+			e2 = new Evento("Woo", LocalDate.parse("2023-08-05"), 30 );
+			e3 = new Evento("Woo", LocalDate.parse("2023-08-06"), 30 );
+			e4 = new Evento("Wii", LocalDate.parse("2023-08-05"), 30 );
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
 		
-		System.out.println(c);
-		System.out.println("Posti disponibili: " + c.getPostiDisponibili());
-		
-		try {
-			for(int i = 0; i < 20; i++ ) {
-				c.disdici();				
-			}
-			
-		} catch (Exception e) {
-			System.err.println(e.getMessage());
-		}
-		
-		System.out.println("Posti disponibili: " + c.getPostiDisponibili());
+		System.out.println("e1 equals e2: " + e1.equals(e2));
+		System.out.println("e1 equals e3: " + e1.equals(e3));
+		System.out.println("e1 equals e2: " + e1.equals(e4));
+
+
 	}
 }

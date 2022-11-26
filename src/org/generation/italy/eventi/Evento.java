@@ -63,6 +63,15 @@ public class Evento {
 	}
 	
 	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Evento) {
+			Evento e = (Evento) obj;
+			return e.getTitolo().equals(titolo) && e.getData().equals(data);
+		}
+		return false;
+	}
+
+	@Override
 	public String toString() {
 		return getDataFormattata() + " - " + getTitolo();
 	}
