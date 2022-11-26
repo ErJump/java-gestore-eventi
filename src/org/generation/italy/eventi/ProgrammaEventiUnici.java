@@ -2,6 +2,7 @@ package org.generation.italy.eventi;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -98,6 +99,14 @@ public class ProgrammaEventiUnici {
 		for (Evento e : eventiList) {
 			System.out.println(e);
 		}
+	}
+	
+	public Evento getFirstEvent() {
+		return Collections.max(eventi, (e1, e2) -> e2.getData().compareTo(e1.getData()));
+	}
+	
+	public Evento getLastEvent() {
+		return Collections.max(eventi, (e1, e2) -> e1.getData().compareTo(e2.getData()));
 	}
 	
 	@Override

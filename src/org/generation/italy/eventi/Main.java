@@ -137,9 +137,9 @@ public class Main {
 		Evento e4 = null;
 		
 		try {
-			e1 = new Evento("Woo", LocalDate.parse("2023-08-05"), 3000 );
-			e2 = new Evento("Woooo", LocalDate.parse("2023-08-05"), 5000 );
-			e3 = new Evento("Wooo", LocalDate.parse("2023-08-06"), 4000 );
+			e1 = new Evento("Woo", LocalDate.parse("2023-09-05"), 3000 );
+			e2 = new Evento("Woooo", LocalDate.parse("2023-06-05"), 5000 );
+			e3 = new Evento("Wooo", LocalDate.parse("2023-07-06"), 4000 );
 			e4 = new Evento("Wiiiiiiiiiii", LocalDate.parse("2023-08-05"), 600 );
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
@@ -169,6 +169,10 @@ public class Main {
 //		System.out.println("Numero eventi dopo clear: " + peu.getNumeroEventi());
 		System.out.println("------------------");
 		peu.orderedPrint();
+		
+		System.out.println("------------------");
+		System.out.println("Evento più vicino: " + peu.getFirstEvent());
+		System.out.println("Evento più Lontano: " + peu.getLastEvent());
 
 	}
 }
