@@ -160,6 +160,9 @@ public class Main {
 		System.out.println("Evento con maggior numero di posti: " + peu.getMaxPostiTotaliEvento() 
 							+ " - " 
 							+ peu.getMaxPostiTotaliEvento().getPostiTotale() + " posti");
+		System.out.println("Evento con minor numero di posti: " + peu.getMinPostiTotaliEvento() 
+							+ " - " 
+							+ peu.getMinPostiTotaliEvento().getPostiTotale() + " posti");
 		peu.clearEventi();
 		System.out.println("Numero eventi dopo clear: " + peu.getNumeroEventi());
 

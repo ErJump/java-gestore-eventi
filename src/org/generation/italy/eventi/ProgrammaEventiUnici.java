@@ -78,6 +78,19 @@ public class ProgrammaEventiUnici {
 		return maxPostiTotaliEvento;
 	}
 	
+	public Evento getMinPostiTotaliEvento() {
+		Evento minPostiTotaliEvento = null;
+		int minPostiTotali = Integer.MAX_VALUE;
+		
+		for (Evento e : eventi) {
+			if (e.getPostiTotale() < minPostiTotali) {
+				minPostiTotali = e.getPostiTotale();
+				minPostiTotaliEvento = e;
+			}
+		}
+		return minPostiTotaliEvento;
+	}
+	
 	@Override
 	public String toString() {
 		return getListaFormattata();
