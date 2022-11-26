@@ -91,6 +91,15 @@ public class ProgrammaEventiUnici {
 		return minPostiTotaliEvento;
 	}
 	
+	public void orderedPrint() {
+		List<Evento> eventiList = new ArrayList<>(eventi);
+		eventiList.sort((e1, e2) -> e2.getTitolo().length() - e1.getTitolo().length());
+
+		for (Evento e : eventiList) {
+			System.out.println(e);
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return getListaFormattata();

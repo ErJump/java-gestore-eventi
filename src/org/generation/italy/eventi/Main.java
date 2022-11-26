@@ -138,9 +138,9 @@ public class Main {
 		
 		try {
 			e1 = new Evento("Woo", LocalDate.parse("2023-08-05"), 3000 );
-			e2 = new Evento("Woo", LocalDate.parse("2023-08-05"), 5000 );
-			e3 = new Evento("Woo", LocalDate.parse("2023-08-06"), 4000 );
-			e4 = new Evento("Wii", LocalDate.parse("2023-08-05"), 600 );
+			e2 = new Evento("Woooo", LocalDate.parse("2023-08-05"), 5000 );
+			e3 = new Evento("Wooo", LocalDate.parse("2023-08-06"), 4000 );
+			e4 = new Evento("Wiiiiiiiiiii", LocalDate.parse("2023-08-05"), 600 );
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
@@ -154,6 +154,7 @@ public class Main {
 		peu.addEvento(e1);
 		peu.addEvento(e1);
 		peu.addEvento(e2);
+		peu.addEvento(e3);
 		peu.addEvento(e4);
 		System.out.println(peu);
 		System.out.println("Numero eventi: " + peu.getNumeroEventi());
@@ -163,8 +164,11 @@ public class Main {
 		System.out.println("Evento con minor numero di posti: " + peu.getMinPostiTotaliEvento() 
 							+ " - " 
 							+ peu.getMinPostiTotaliEvento().getPostiTotale() + " posti");
-		peu.clearEventi();
-		System.out.println("Numero eventi dopo clear: " + peu.getNumeroEventi());
+		
+//		peu.clearEventi();
+//		System.out.println("Numero eventi dopo clear: " + peu.getNumeroEventi());
+		System.out.println("------------------");
+		peu.orderedPrint();
 
 	}
 }
