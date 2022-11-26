@@ -148,7 +148,17 @@ public class Main {
 		System.out.println("e1 equals e2: " + e1.equals(e2));
 		System.out.println("e1 equals e3: " + e1.equals(e3));
 		System.out.println("e1 equals e2: " + e1.equals(e4));
-
+		System.out.println("-------------------------------");
+		
+		ProgrammaEventiUnici peu = new ProgrammaEventiUnici("Estate Unica");
+		peu.addEvento(e1);
+		peu.addEvento(e1);
+		peu.addEvento(e2);
+		peu.addEvento(e4);
+		System.out.println(peu);
+		System.out.println("Numero eventi: " + peu.getNumeroEventi());
+		peu.clearEventi();
+		System.out.println("Numero eventi dopo clear: " + peu.getNumeroEventi());
 
 	}
 }

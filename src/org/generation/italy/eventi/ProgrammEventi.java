@@ -9,8 +9,8 @@ public class ProgrammEventi {
 	private List<Evento> eventi;
 	
 
-	public ProgrammEventi(String titolo2) {
-		this.titolo = titolo2;
+	public ProgrammEventi(String titolo) {
+		this.titolo = titolo;
 		this.eventi = new ArrayList<>();
 	}
 
